@@ -9,9 +9,9 @@ It spits out:
 
 - One primary letter and six secondary letters
 - These letters are used to make a Spelling Bee-type puzzle
-- An object containing all the words and the scores you would get if you came up with those words
-- Scoring ranges based on the words that can be formed and their lengths
--
+- An object containing all the words and the scores you would get if you came up with those words (scoring rubric)
+- Scoring ranges based on the words that can be formed and their lengths (bonus goal)
+- TUI for getting scored
 
 # Constraints of the 7 Letters
 
