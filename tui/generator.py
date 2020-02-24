@@ -10,7 +10,7 @@ def _save_found_word(filename, wordList):
 
 def generate(filename=None):
     if filename is None:
-        filename = "pangrams.txt"
+        filename = "puzzles.txt"
     try:
         for i in itertools.count():
             if i%10 == 0:
