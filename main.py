@@ -1,11 +1,7 @@
 from argparse import ArgumentParser
 
+import tui.game
 import tui.generator
-
-def play(filename=None):
-    if filename:
-        print("Filename supplied: {}".format(filename))
-    print("Oh boy, playing the game!")
 
 def main():
     parser = ArgumentParser("Play SpellingBean and generate new " +
@@ -17,7 +13,7 @@ def main():
     a = parser.parse_args()
 
     if a.action == "play":
-        play(a.file)
+        tui.game.play(a.file)
     else:
         tui.generator.generate(a.file)
 
