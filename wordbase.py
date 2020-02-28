@@ -1,8 +1,13 @@
 import itertools
 import pickle
 from collections import Counter, namedtuple
+from textwrap import dedent
 
 Word = namedtuple("Word", ["str", "set"])
+Word.__repr__ = lambda self: "Word(str={}, set=frozenset({}))".format(
+                                repr(self.str),
+                                repr("".join(self.set))
+                              )
 def newWord(str_):
     """Given a pangram as a string, return a Word representing it."""
     return Word(str_, frozenset(str_))
@@ -48,6 +53,16 @@ class Pangram:
         self.word = word
         self.pivot_letter = pivot_letter
         self.word_lengths = word_lengths
+
+    def __repr__(self):
+        return dedent("""\
+                      Pangram(wordBase={},
+                              word={},
+                              pivot_letter={},
+                              word_lengths={}""").format(repr(self.wordBase),
+                                                         repr(self.word),
+                                                         repr(self.pivot_letter),
+                                                         repr(self.word_lengths))
 
     @classmethod
     def from_word(cls, wordBase, word, pivot_letter):
